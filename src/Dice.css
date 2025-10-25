@@ -1,28 +1,26 @@
 /* ===== Reset & Theme ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root{
-  --bg: #0b3d2e;        /* felt green base */
-  --felt: #135a44;      /* lighter felt */
+  --bg: #282828;        /* green base */
+  --felt: #343434f0;      /* grey */
   --panel: #0a0f14;     /* dark frame */
   --text: #e7f3ef;
-  --muted: #9cc5b8;
-  --accent: #f0b429;    /* gold */
+  --muted: #9e83ce;
+  --accent: #b129f0;    /* purple */
   --accent-2: #2dd4bf;  /* teal */
-  --border: rgba(0,0,0,.35);
+  --border: rgba(0, 0, 0, 0.35);
 }
 
 html, body { height: 100%; }
 body{
   background:
-    radial-gradient(900px 500px at 20% -10%, rgba(45,212,191,.18), transparent 40%),
-    radial-gradient(900px 500px at 110% 0%, rgba(240,180,41,.14), transparent 45%),
     var(--bg);
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
   display: flex; align-items: center; justify-content: center;
 }
 
-/* ===== App Shell ===== */
+/* ===== Container Shell ===== */
 .container{
   width: min(920px, 94vw);
   border: 1px solid var(--border);
@@ -30,7 +28,7 @@ body{
   background:
     linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.06)),
     var(--felt);
-  box-shadow: 0 30px 60px rgba(0,0,0,.35), inset 0 0 120px rgba(0,0,0,.25);
+  box-shadow: 0 30px 60px rgba(85, 43, 103, 0.35), inset 0 0 120px rgba(0,0,0,.25);
   padding: 28px 24px;
 }
 
@@ -46,15 +44,11 @@ body{
 }
 
 .die{
-  width: 250px; height: 250px;      /* keeps layout stable */
+  width: 250px; height: 250px;   
   border-radius: 18px;
-  background: #0e1519;
   padding: 10px;
   display: grid; place-items: center;
   border: 1px solid rgba(255,255,255,.06);
-  box-shadow:
-    0 12px 26px rgba(0,0,0,.45),
-    inset 0 0 0 1px rgba(0,0,0,.5);
   transform-style: preserve-3d;
   transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
@@ -66,10 +60,9 @@ body{
   filter: drop-shadow(0 6px 10px rgba(0,0,0,.45));
 }
 
-/* subtle hover when not shuffling */
-.die:hover{ transform: translateY(-2px) rotateX(2deg) rotateY(-2deg); }
 
-/* Rolling animation (applied while shuffling) */
+
+/* Rolling animation */
 @keyframes shakeRoll{
   0%   { transform: rotateZ(0deg)   translateZ(0); }
   20%  { transform: rotateZ(6deg)   translate(-3px, -2px); }
@@ -92,7 +85,7 @@ body{
 
 .generate-btn{
   border: 0;
-  background: linear-gradient(180deg, var(--accent), #d49a1f);
+  background: linear-gradient(180deg, var(--accent), #561ba8);
   color: #1a1206;
   font-weight: 800;
   letter-spacing: .3px;
